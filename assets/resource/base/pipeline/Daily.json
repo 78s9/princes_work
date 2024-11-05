@@ -1,0 +1,104 @@
+{
+    "Daily":{
+        "next":["Back Homepage"]
+    },
+    "Back Homepage":{
+        "action":"Click",
+        "target":[74 ,690 ,87 ,23],
+        "next":["清日常"]
+    },
+    "清日常": {
+        "recognition": "OCR",
+        "expected": "日程表",
+        "action":"Click",
+        "post_delay": 2500,
+        "next":["一键启动"]
+    },
+    "一键启动":{
+        "recognition": "OCR",
+        "expected": "一键自动",
+        "action":"Click",
+        "post_delay": 4000,
+        "next":["经验确认1"],
+        "interrupt":["点击关闭","点击关闭 in 活动结束"]
+    },
+    "经验确认1":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi":[754,473,62,37],
+        "action":"Click",
+        "post_delay":5000,
+        "next":["确认1"]
+    },
+    "确认1":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "action":"Click",
+        "post_delay":3000,
+        "next":["经验确认2"]
+    },
+    "经验确认2":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi":[754,473,62,37],
+        "action":"Click",
+        "post_delay":5000,
+        "next":["确认2"]
+    },
+    "确认2":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "action":"Click",
+        "post_delay":3000,
+        "next":["经验确认3"]
+    },
+    "经验确认3":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi":[754,473,62,37],
+        "action":"Click",
+        "post_delay":4000,
+        "next":["确认3"]
+    },
+    "确认3":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "action":"Click",
+        "post_delay":3000,
+        "next":["经验确认4"]
+    },
+    "经验确认4":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi":[754,473,62,37],
+        "action":"Click",
+        "post_delay":4000,
+        "next":["确认4"]
+    },
+    "确认4":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "action":"Click",
+        "post_delay":4000,
+        "next":["确认5"]
+    },
+    "确认5":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "action":"Click",
+        "post_delay":5000,
+        "next":["点击关闭 in daily1"]
+    },
+    "点击关闭 in daily1":{
+        "recognition":"OCR",
+        "expected":"关闭",
+        "action":"Click",
+        "post_delay":2000,
+        "next":["点击关闭 in daily2"]
+    },
+    "点击关闭 in daily2":{
+        "action":"Click",
+        "post_delay":6000,
+        "target":[345,623,54,30]
+    }
+}
