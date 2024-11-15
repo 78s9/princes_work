@@ -27,8 +27,13 @@
         "is_sub":true,
         "timeout_next":"点击关闭 in 活动结束",
         "next":["点击关闭"],
-        "pre_wait_freezes":3000,
-        "on_error":["skip Anniversary"]
+        "pre_wait_freezes":{
+            "time":3000,
+            "recognition": "OCR",
+            "expected": "下一步",
+            "action":"Click"
+        },
+        "on_error":["进入到主界面"]
     },
     "skip Anniversary":{
         "recognition": "OCR",
@@ -97,102 +102,6 @@
         "expected": "普通",
         "action":"Click"
     },
-
-    
-
-
-    "Back Homepage-1":{
-        "post_delay":2500,
-        "action":"Click",
-        "target":[74 ,690 ,87 ,23],
-        "next":["清空体力"]
-    },
-    "清空体力":{
-        "action":"Click",
-        "target":[74 ,690 ,87 ,23],
-        "per_delay":2500,
-        "next":["Click maoxian"]
-    },
-    "Click maoxian":{
-        "action":"Click",
-        "post_delay":1000,
-        "target":[586,600,123,103],
-        "next":["Click juqing houdong"],
-        "interrupt":["Click mianadvantage"]
-    },
-    "Click juqing houdong":{
-        "post_delay":3500,
-        "recognition": "OCR",
-        "expected": "剧情活动",
-        "action":"Click",
-        "next":["guanbi in huodong"]
-    },
-    "guanbi in huodong":{
-        "recognition": "OCR",
-        "expected": "关闭",
-        "action":"Click",
-        "post_delay":4000,
-        "next":["EX game"]
-    },
-    "EX game":{
-        "post_delay":2000,
-        "recognition": "OCR",
-        "expected": "高难",
-        "action":"Click",
-        "next":["Start EX game"]
-    },
-    "Start EX game":{
-        "post_delay":2000,
-        "recognition": "OCR",
-        "roi":[1089,606,63,35],
-        "expected": "挑战",
-        "action":"Click",
-        "next":["START"]
-    },
-    "START":{
-        "post_delay":1000,
-        "recognition": "OCR",
-        "expected": "战斗开始",
-        "action":"Click"
-    },
-    "huodonggame1-5":{
-        "post_delay":1000,
-        "recognition":"FeatureMatch",
-        "template":"1-5.jpg",
-        "roi":[820,445,78,35],
-        "action":"Click",
-        "next":["START1-5"]
-    },
-    "START1-5":{
-        "post_delay":1000,
-        "recognition": "OCR",
-        "expected": "使用",
-        "action":"Click",
-        "next":["确认1-5"]
-    },
-    "确认1-5":{
-        "recognition": "OCR",
-        "expected": "确认",
-        "roi":[754,473,62,37],
-        "action":"Click",
-        "post_delay":4000,
-        "next":["确认1-5-2"]
-    },
-    "确认1-5-2":{
-        "recognition": "OCR",
-        "expected": "确认",
-        "action":"Click",
-        "post_delay":3000,
-        "pre_wait_freezes":{
-            "time":1000,
-            "recognition": "OCR",
-            "expected": "下一步",
-            "action":"Click"
-        }
-    },
-
-
-    
     "Click mianadvantage":{
         "post_delay":1000,
         "recognition": "OCR",
@@ -278,9 +187,7 @@
     },
     "一键购买":{
         "action":"Click",
-        "target":[
-            1062,615,89,33
-        ],
+        "target":[1062,615,89,33],
         "next":["点击确认"]
     },
     "点击确认":{
