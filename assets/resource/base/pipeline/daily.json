@@ -65,7 +65,8 @@
         "expected": "确认",
         "action":"Click",
         "post_delay":3000,
-        "next":["经验确认4"]
+        "next":["经验确认4"],
+        "interrupt":["确认5"]
     },
     "经验确认4":{
         "recognition": "OCR",

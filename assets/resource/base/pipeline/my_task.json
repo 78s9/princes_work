@@ -25,15 +25,7 @@
         "action":"Click",
         "post_delay":5000,
         "is_sub":true,
-        "timeout_next":"点击关闭 in 活动结束",
-        "next":["点击关闭"],
-        "pre_wait_freezes":{
-            "time":3000,
-            "recognition": "OCR",
-            "expected": "下一步",
-            "action":"Click"
-        },
-        "on_error":["进入到主界面"]
+        "next":["点击关闭"]
     },
     "skip Anniversary":{
         "recognition": "OCR",
@@ -41,7 +33,7 @@
         "action":"Click",
         "roi":[1208,70,25,10],
         "pre_delay":2500,
-        "next":"点击跳过 in story"
+        "next":["点击跳过 in story"]
     },
     "点击跳过 in story":{
         "recognition": "OCR",
@@ -55,10 +47,37 @@
         "recognition": "OCR",
         "expected": "跳过",
         "action":"Click",
-        "pre_delay":500,
-        "is_sub":true,
-        "next":"点击跳过"
+        "pre_delay":5000,
+        "next":["点击确认 in skip birthday 1"]
     },
+    "点击确认 in skip birthday 1":{
+        "recognition": "OCR",
+        "expected": "跳过",
+        "action":"Click",
+        "roi":[754,473,62,37],
+        "post_delay": 6000,
+        "next":["点击确认 in skip birthday 2"]
+    },
+    "点击确认 in skip birthday 2":{
+        "recognition": "OCR",
+        "expected": "跳过",
+        "action":"Click",
+        "post_delay": 1000,
+        "next":["点击确认 in skip birthday 3"]
+    },
+    "点击确认 in skip birthday 3":{
+        "recognition": "OCR",
+        "expected": "跳过",
+        "action":"Click",
+        "roi":[754,473,62,37],
+        "post_delay": 6000,
+        "next":["点击确认 in skip birthday 4"]
+    },
+    "点击确认 in skip birthday 4":{
+        "action":"Click",
+        "target":[754,473,62,37]
+    },
+
     "skip huodong":{
         "recognition": "OCR",
         "expected": "菜单",
