@@ -19,8 +19,7 @@
         "expected": "一键自动",
         "action":"Click",
         "post_delay": 4000,
-        "next":["经验确认1"],
-        "interrupt":["点击关闭","点击关闭 in 活动结束"]
+        "next":["经验确认1"]
     },
     "经验确认1":{
         "recognition": "OCR",
@@ -66,7 +65,7 @@
         "action":"Click",
         "post_delay":3000,
         "next":["经验确认4"],
-        "interrupt":["确认5"]
+        "on_error":["确认5"]
     },
     "经验确认4":{
         "recognition": "OCR",

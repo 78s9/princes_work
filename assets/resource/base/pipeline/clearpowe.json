@@ -15,8 +15,10 @@
         "action":"Click",
         "post_delay":1000,
         "target":[586,600,123,103],
-        "next":["Click juqing houdong"],
-        "interrupt":["Click mianadvantage"]
+        "next":[
+            "Click juqing houdong",
+            "Click fuke"],
+        "on_error":["Click mianadvantage"]
     },
     "Click juqing houdong":{
         "post_delay":3500,
@@ -24,7 +26,15 @@
         "expected": "剧情活动",
         "action":"Click",
         "next":["guanbi in huodong"],
-        "interrupt":["EX game"]
+        "on_error":["EX game"]
+    },
+    "Click fuke":{
+        "post_delay":3500,
+        "recognition": "OCR",
+        "expected": "复刻",
+        "action":"Click",
+        "next":["guanbi in huodong"],
+        "on_error":["EX game"]
     },
     "guanbi in huodong":{
         "recognition": "OCR",
@@ -53,7 +63,7 @@
         "recognition": "OCR",
         "expected": "战斗开始",
         "action":"Click",
-        "pre_wait_freezes":{
+        "post_wait_freezes":{
             "time":1000,
             "recognition": "OCR",
             "expected": "下一步",

@@ -4,7 +4,7 @@
         "template":"pcr-icon.jpg",
         "action":"Click",
         "threshold":0.5,
-        "post_delay": 20000,
+        "post_delay": 25000,
         "next":"进入到主界面"
     },
     "进入到主界面":{
@@ -15,17 +15,18 @@
     },
     "数据下载":{
         "action":"Click",
-        "post_delay": 3000,
+        "post_delay": 4000,
         "target":[757 ,475 ,61 ,37],
-        "next":"点击跳过"
+        "next":["点击跳过"],
+        "on_error":["点击关闭"]
     },
     "点击跳过":{
         "recognition":"TemplateMatch",
         "template":"skip.jpg",
         "action":"Click",
         "post_delay":5000,
-        "is_sub":true,
-        "next":["点击关闭"]
+        "next":["点击关闭"],
+        "on_error":["skip birthday"]
     },
     "skip Anniversary":{
         "recognition": "OCR",
