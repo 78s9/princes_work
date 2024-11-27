@@ -129,57 +129,14 @@
         "action":"Click"
     },
 
-    "task":{
-        "recognition":"OCR",
-        "expected":"任务",
-        "post_delay":1000,
-        "action":"Click",
-        "next":["全部收取"]
-    },
-
     "点击关闭 in 活动结束":{
         "recognition": "OCR",
         "expected": "关闭",
-        "action":"Click",
-        "is_sub":true
-    },
-
-
-
-    "收取礼物":{
-        "recognition":"OCR",
-        "expected":"礼物",
-        "action":"Click",
-        "post_delay":1000,
-        "next":["全部收取"]
-    },
-    "全部收取":{
-        "recognition":"OCR",
-        "expected":"全部收取",
-        "action":"Click",
-        "post_delay":1000,
-        "next":["点击确认"],
-        "interrupt":["点击关闭"]
-    },
-    "向下滑动":{
-        "action":"Swipe",
-        "begin":[100,500,10,10],
-        "end":[100,100,10,10]
-    },
-    "点击关闭":{
-        "recognition":"OCR",
-        "expected":"关闭",
-        "action":"Click",
-        "pre_wait_freezes": {
-            "time":500,
-            "action":"Click"
-        }
-    },
-    "点击取消":{
-        "recognition":"OCR",
-        "expected":"取消",
         "action":"Click"
     },
+
+    
+
     "清空商店":{
         "recognition":"OCR",
         "expected":"商店",
@@ -210,13 +167,48 @@
         "target":[1062,615,89,33],
         "next":["点击确认"]
     },
+
+
+
+
+
+
+
+
+
+
+
+
+    "向下滑动":{
+        "action":"Swipe",
+        "begin":[100,500,10,10],
+        "end":[100,100,10,10]
+    },
     "点击确认":{
+        "post_delay":1000,
         "action":"Click",
         "target":[754,619,63,37]
     },
     "再次确认":{
         "recognition":"OCR",
         "expected":"确认",
+        "post_delay":1000,
+        "action":"Click"
+    },
+    "点击关闭":{
+        "recognition":"OCR",
+        "expected":"关闭",
+        "action":"Click",
+        "post_delay":1000,
+        "pre_wait_freezes": {
+            "time":500,
+            "action":"Click"
+        }
+    },
+    "点击取消":{
+        "recognition":"OCR",
+        "expected":"取消",
+        "post_delay":1000,
         "action":"Click"
     }
 }
