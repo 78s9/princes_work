@@ -59,22 +59,25 @@
         "next":["START"]
     },
     "START":{
-        "post_delay":1000,
+        "post_delay":90000,
         "recognition": "OCR",
         "expected": "战斗开始",
         "action":"Click",
-        "post_wait_freezes":{
-            "time":1000,
-            "recognition": "OCR",
-            "expected": "下一步",
-            "action":"Click"
-        },
-        "next":["点击1"]
+        "next":["下一步-1"]
     },
-    "点击1":{
+    "下一步-1":{
+        "post_delay":2000,
+        "recognition": "OCR",
+        "expected": "下一步",
         "action":"Click",
-        "target":[345,623,54,30]
+        "next":["下一步-2"]
     },
+    "下一步-2":{
+        "recognition": "OCR",
+        "expected": "下一步",
+        "action":"Click"
+    },
+
 
     "huodonggame1-2":{
         "recognition":"FeatureMatch",
@@ -163,6 +166,7 @@
         "post_delay":1000,
         "recognition":"FeatureMatch",
         "template":"1-5.jpg",
+        "roi":[850,473,40,89],
         "action":"Click",
         "next":["START1-5"]
     },

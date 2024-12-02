@@ -114,13 +114,30 @@
         "expected":"全部收取",
         "action":"Click",
         "post_delay":1000,
-        "next":["点击关闭"]
+        "next":["点击关闭 in task"]
+    },
+    "点击关闭 in task":{
+        "recognition":"OCR",
+        "expected":"关闭",
+        "action":"Click",
+        "post_delay":3000,
+        "pre_wait_freezes": {
+            "time":500,
+            "action":"Click"
+        },
+        "next":["Back Homepage in task"]
+    },
+    "Back Homepage in task":{
+        "action":"Click",
+        "target":[74 ,690 ,87 ,23],
+        "next":["收取礼物"]
     },
 
     "收取礼物":{
         "recognition":"OCR",
         "expected":"礼物",
         "action":"Click",
+        "roi":[1200,602,34,19],
         "post_delay":1000,
         "next":["全部收取"]
     },
@@ -144,15 +161,15 @@
         "expected":"确认",
         "post_delay":1000,
         "action":"Click",
-        "next":["点击关闭 in 礼物"]
+        "next":["点击取消 in 礼物"]
     },
-    "点击关闭 in 礼物":{
+    "点击取消 in 礼物":{
         "recognition":"OCR",
-        "expected":"关闭",
+        "expected":"取消",
         "action":"Click",
         "post_delay":1000,
         "pre_wait_freezes": {
-            "time":5000,
+            "time":1000,
             "action":"Click"
         }
     }

@@ -5,26 +5,39 @@
         "action":"Click",
         "threshold":0.5,
         "post_delay": 25000,
-        "next":"进入到主界面"
+        "next":["进入到主界面"]
     },
     "进入到主界面":{
+        "recognition": "OCR",
+        "expected": "点击屏幕",
         "action":"Click",
         "post_delay": 15000,
         "target":[757 ,475 ,61 ,37],
-        "next":"数据下载"
+        "next":["数据下载"],
+        "on_error":["点击关闭"]
     },
     "数据下载":{
+        "recognition": "OCR",
+        "expected": "数据下载",
+        "action":"Click",
+        "post_delay": 4000,
+        "target":[757 ,475 ,61 ,37],
+        "next":["touch"],
+        "on_error":["点击关闭"]
+    },
+    "touch":{
         "action":"Click",
         "post_delay": 4000,
         "target":[757 ,475 ,61 ,37],
         "next":["点击跳过"],
         "on_error":["点击关闭"]
     },
+
     "点击跳过":{
         "recognition":"TemplateMatch",
         "template":"skip.jpg",
         "action":"Click",
-        "post_delay":5000,
+        "post_delay":6000,
         "next":["点击关闭"],
         "on_error":["skip birthday"]
     },
