@@ -19,8 +19,7 @@
         "expected": "一键自动",
         "action":"Click",
         "post_delay": 4000,
-        "next":["经验确认1"],
-        "interrupt":["点击关闭","点击关闭 in 活动结束"]
+        "next":["经验确认1"]
     },
     "经验确认1":{
         "recognition": "OCR",
@@ -65,7 +64,8 @@
         "expected": "确认",
         "action":"Click",
         "post_delay":3000,
-        "next":["经验确认4"]
+        "next":["经验确认4"],
+        "on_error":["确认5"]
     },
     "经验确认4":{
         "recognition": "OCR",
@@ -79,7 +79,7 @@
         "recognition": "OCR",
         "expected": "确认",
         "action":"Click",
-        "post_delay":4000,
+        "post_delay":3000,
         "next":["确认5"]
     },
     "确认5":{
@@ -99,6 +99,78 @@
     "点击关闭 in daily2":{
         "action":"Click",
         "post_delay":6000,
-        "target":[345,623,54,30]
+        "target":[345,623,54,30],
+        "next":["领取任务奖励"]
+    },
+    "领取任务奖励":{
+        "recognition":"OCR",
+        "expected":"任务",
+        "post_delay":3000,
+        "action":"Click",
+        "next":["全部收取 in task"]
+    },
+    "全部收取 in task":{
+        "recognition":"OCR",
+        "expected":"全部收取",
+        "action":"Click",
+        "post_delay":1000,
+        "next":["点击关闭 in task"]
+    },
+    "点击关闭 in task":{
+        "recognition":"OCR",
+        "expected":"关闭",
+        "action":"Click",
+        "post_delay":3000,
+        "pre_wait_freezes": {
+            "time":500,
+            "action":"Click"
+        },
+        "next":["Back Homepage in task"]
+    },
+    "Back Homepage in task":{
+        "action":"Click",
+        "target":[74 ,690 ,87 ,23],
+        "next":["收取礼物"]
+    },
+
+    "收取礼物":{
+        "recognition":"OCR",
+        "expected":"礼物",
+        "action":"Click",
+        "roi":[1200,602,34,19],
+        "post_delay":1000,
+        "next":["全部收取"]
+    },
+    "全部收取":{
+        "recognition":"OCR",
+        "expected":"全部收取",
+        "action":"Click",
+        "post_delay":1000,
+        "next":["点击确认 in 礼物"],
+        "on_error":["点击关闭"]
+    },
+
+    "点击确认 in 礼物":{
+        "post_delay":1000,
+        "action":"Click",
+        "target":[754,619,63,37],
+        "next":["再次确认 in 礼物"]
+    },
+    "再次确认 in 礼物":{
+        "recognition":"OCR",
+        "expected":"确认",
+        "post_delay":1000,
+        "action":"Click",
+        "next":["点击取消 in 礼物"]
+    },
+    "点击取消 in 礼物":{
+        "recognition":"OCR",
+        "expected":"取消",
+        "action":"Click",
+        "post_delay":1000,
+        "pre_wait_freezes": {
+            "time":1000,
+            "action":"Click"
+        }
     }
 }

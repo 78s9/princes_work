@@ -1,0 +1,201 @@
+{
+    "Back Homepage-1":{
+        "post_delay":2500,
+        "action":"Click",
+        "target":[74 ,690 ,87 ,23],
+        "next":["清空体力"]
+    },
+    "清空体力":{
+        "action":"Click",
+        "target":[74 ,690 ,87 ,23],
+        "per_delay":2500,
+        "next":["Click maoxian"]
+    },
+    "Click maoxian":{
+        "action":"Click",
+        "post_delay":1000,
+        "target":[586,600,123,103],
+        "next":[
+            "Click juqing houdong",
+            "Click fuke"],
+        "on_error":["Click mianadvantage"]
+    },
+    "Click juqing houdong":{
+        "post_delay":3500,
+        "recognition": "OCR",
+        "expected": "剧情活动",
+        "action":"Click",
+        "next":["guanbi in huodong"],
+        "on_error":["EX game"]
+    },
+    "Click fuke":{
+        "post_delay":3500,
+        "recognition": "OCR",
+        "expected": "复刻",
+        "action":"Click",
+        "next":["guanbi in huodong"],
+        "on_error":["EX game"]
+    },
+    "guanbi in huodong":{
+        "recognition": "OCR",
+        "expected": "关闭",
+        "action":"Click",
+        "post_delay":4000,
+        "next":["EX game"]
+    },
+    "EX game":{
+        "post_delay":3000,
+        "recognition": "OCR",
+        "expected": "高难",
+        "action":"Click",
+        "next":["Start EX game"]
+    },
+    "Start EX game":{
+        "post_delay":2000,
+        "recognition": "OCR",
+        "roi":[1089,606,63,35],
+        "expected": "挑战",
+        "action":"Click",
+        "next":["START"]
+    },
+    "START":{
+        "post_delay":90000,
+        "recognition": "OCR",
+        "expected": "战斗开始",
+        "action":"Click",
+        "next":["下一步-1"]
+    },
+    "下一步-1":{
+        "post_delay":2000,
+        "recognition": "OCR",
+        "expected": "下一步",
+        "action":"Click",
+        "next":["下一步-2"]
+    },
+    "下一步-2":{
+        "recognition": "OCR",
+        "expected": "下一步",
+        "action":"Click"
+    },
+
+
+    "huodonggame1-2":{
+        "recognition":"FeatureMatch",
+        "template":"1-2.jpg",
+        "post_delay":1000,
+        "target":[184,537,87,52],
+        "action":"Click"
+    },
+
+
+
+    "huodonggame1-3":{
+        "post_delay":1000,
+        "recognition":"FeatureMatch",
+        "template":"1-3.jpg",
+        "roi":[495,510,75,35],
+        "action":"Click"
+    },
+    "START1-3":{
+        "post_delay":1000,
+        "recognition": "OCR",
+        "expected": "使用",
+        "action":"Click",
+        "next":["确认1-3"]
+    },
+    "确认1-3":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi":[754,473,62,37],
+        "action":"Click",
+        "post_delay":5000,
+        "next":["确认1-3-2"]
+    },
+    "确认1-3-2":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "action":"Click",
+        "post_delay":3500,
+        "pre_wait_freezes":{
+            "time":1000,
+            "recognition": "OCR",
+            "expected": "下一步",
+            "action":"Click"
+        },
+        "next":["点击取消"]
+    },
+
+
+    "huodonggame1-4":{
+        "post_delay":1000,
+        "recognition":"FeatureMatch",
+        "template":"1-4.jpg",
+        "roi":[668,333,78,35],
+        "action":"Click",
+        "next":["START1-4"]
+    },
+    "START1-4":{
+        "post_delay":1000,
+        "recognition": "OCR",
+        "expected": "使用",
+        "action":"Click",
+        "next":["确认1-4"]
+    },
+    "确认1-4":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi":[754,473,62,37],
+        "action":"Click",
+        "post_delay":5000,
+        "next":["确认1-4-2"]
+    },
+    "确认1-4-2":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "action":"Click",
+        "post_delay":3500,
+        "pre_wait_freezes":{
+            "time":1000,
+            "recognition": "OCR",
+            "expected": "下一步",
+            "action":"Click"
+        },
+        "next":["点击取消"]
+    },
+    "huodonggame1-5":{
+        "post_delay":1000,
+        "recognition":"FeatureMatch",
+        "template":"1-5.jpg",
+        "roi":[850,473,40,89],
+        "action":"Click",
+        "next":["START1-5"]
+    },
+    "START1-5":{
+        "post_delay":1000,
+        "recognition": "OCR",
+        "expected": "使用",
+        "action":"Click",
+        "next":["确认1-5"]
+    },
+    "确认1-5":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi":[754,473,62,37],
+        "action":"Click",
+        "post_delay":5000,
+        "next":["确认1-5-2"]
+    },
+    "确认1-5-2":{
+        "recognition": "OCR",
+        "expected": "确认",
+        "action":"Click",
+        "post_delay":3500,
+        "pre_wait_freezes":{
+            "time":1000,
+            "recognition": "OCR",
+            "expected": "下一步",
+            "action":"Click"
+        },
+        "next":["点击取消"]
+    }
+}
